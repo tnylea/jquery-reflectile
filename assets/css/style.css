@@ -2,6 +2,7 @@ html, body{
 	margin:0px;
 	padding:0px;
 	font-family:Helvetica, Arial, Courier;
+	background:#33373f;
 }
 
 div.header{
@@ -24,15 +25,18 @@ h1{
 }
 
 h2{
-	color:#222531;
-	text-shadow:1px 1px 1px #aaa;
+	color:#ddd;
+	text-shadow:1px 1px 1px #333;
 	text-align:center;
 	margin-top:0px;
 	padding:10px 0px;
 	padding-top:80px;
+	padding-bottom:20px;
 	font-family:verdana;
 	font-size:15px;
 	margin-bottom:40px;
+	width:100%;
+	background:#222;
 }
 
 h4{
@@ -51,7 +55,7 @@ h4.green{
 
 hr{
 	border-bottom:0px;
-	border-top:1px solid #ddd;
+	border-top:1px solid #444;
 	margin:40px auto;
 }
 
