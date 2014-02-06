@@ -36,18 +36,19 @@
 
   		if(bg_horizontal_pos == 0){
   			
-  			loop_tiles($(this), config, 0);
-  			$(window).bind("resize", loop_tiles($(this), config, 0));
+  			loop_tiles($(this), config, 'left');
+  			$(window).bind("resize", loop_tiles($(this), config, 'left'));
 
   		} else if(bg_horizontal_pos == 50){
 
-  			// start_position = ($(window).innerWidth()/2);
-  			// loop_tiles($(this), config, start_position);
-  			loop_tiles($(this), config, 0);
-  			fix_center($(this), config);
+  			loop_tiles($(this), config, 'left');
+  			fix_center($(this), config, 'left');
 
-  			//$(window).bind("resize", loop_tiles($(this), config, 0));
-  			//$(window).bind("resize", fix_center(config));
+  		} else if(bg_horizontal_pos == 100){
+
+  			loop_tiles($(this), config, 'right');
+  			$(window).bind("resize", loop_tiles($(this), config, 'right'));
+
   		}
 
   		$('.reflectile').css('z-index', '1');
@@ -63,15 +64,16 @@
 			container_left = (($(window).innerWidth() % (parseInt(config.width)) ) / 2 ) + 400; 
 		}
 		object.find('.reflectile-container').css('left', container_left + 'px' );
+		object.find('.reflectile-container').css('width', parseInt(object.css('width')) - container_left + 'px' );
 	}
 
-    function loop_tiles(object, config, start_position){
+    function loop_tiles(object, config, bg_position){
 
-		left_pos = -(parseInt(config.width) * 2) + start_position;
+		pos = -(parseInt(config.width) * 2);
 
 		for (var image=1; image < object.width()/parseInt(config.width); image++){
 
-			left_pos += (parseInt(config.width) * 2);
+			pos += (parseInt(config.width) * 2);
 
 			if(object.find('.reflectile-' + image).length == 0){
 
@@ -79,48 +81,18 @@
 	  			
 	  			object.find('.reflectile-' + image).css({
 	  				position: 'absolute',
-	  				left:  left_pos + 'px',
 	  				width: config.width,
 	  				height: object.css('height'),
 	  				'background-image': object.css('background-image'),
 	  				top: '0px'
 	  			});
+
+	  			object.find('.reflectile-' + image).css(bg_position, pos + 'px');
 	  			
 	  			flipImage(object.find('.reflectile-' + image));
 	  		}
 		}
 
-	}
-
-	function loop_center_tile(object, config){
-		left_pos = ( ($(object).width() % (parseInt(config.width)/2)) + parseInt(config.width) ) / 2;
-		//console.log(left_pos);
-		//new_left = 230; //left_pos / 2;
-		
-		left_pos = -600 + left_pos;
-
-
-
-		for (var image=1; image < object.width()/parseInt(config.width); image++){
-
-			left_pos += (parseInt(config.width) * 2);
-
-			if(object.find('.reflectile-' + image).length == 0){
-
-	  			object.find('.reflectile-container').append('<span class="reflectile reflectile-' + image + '"></span>');
-	  			
-	  			object.find('.reflectile-' + image).css({
-	  				position: 'absolute',
-	  				left:  left_pos + 'px',
-	  				width: config.width,
-	  				height: object.css('height'),
-	  				'background-image': object.css('background-image'),
-	  				top: '0px'
-	  			});
-	  			
-	  			flipImage(object.find('.reflectile-' + image));
-	  		}
-		}
 	}
 
 	function flipImage(object){

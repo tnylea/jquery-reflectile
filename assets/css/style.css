@@ -1,6 +1,16 @@
 html, body{
 	margin:0px;
 	padding:0px;
+	font-family:Helvetica, Arial, Courier;
+}
+
+div.header{
+
+	background:#222531;
+	background:rgba(24, 27, 39, 0.9);
+	position:fixed;
+	z-index:999999;
+	width:100%;
 }
 
 h1{
@@ -8,15 +18,41 @@ h1{
 	width:100%;
 	text-align:center;
 	font-family: 'Qwigley', Helvetica, Arial, sans-serif;
-	background:#222531;
 	margin-top:0px;
 	padding:10px 0px;
+	margin-bottom:0px;
+}
+
+h2{
+	color:#222531;
+	text-shadow:1px 1px 1px #aaa;
+	text-align:center;
+	margin-top:0px;
+	padding:10px 0px;
+	padding-top:80px;
+	font-family:verdana;
+	font-size:15px;
+	margin-bottom:40px;
 }
 
 h4{
 	font-family: Helvetica, Arial, sans-serif;
 	text-align:center;
 	color:#5f5f5f;
+}
+
+h4.red{
+	color:#cb4645;
+}
+
+h4.green{
+	color:#0098cb;
+}
+
+hr{
+	border-bottom:0px;
+	border-top:1px solid #ddd;
+	margin:40px auto;
 }
 
 #background1{
@@ -45,4 +81,123 @@ h4{
 	width:100%;
 	height:400px;
 	position:relative;
+}
+
+#background5{
+	background:url('../img/image3.jpg') right repeat;
+	width:100%;
+	height:120px;
+	position:relative;
+}
+
+#background6{
+	background:url('../img/image3.jpg') right repeat;
+	width:100%;
+	height:120px;
+	position:relative;
+}
+
+
+/********** Menu Items **********/
+
+.btn{
+	border:1px solid #424551;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color:#c2c5d1;
+	font-size:13px;
+	font-family:Helvetica, Arial, Courier;
+	padding:10px;
+	cursor:pointer;
+	font-weight:bold;
+	-webkit-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+	-moz-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+	-o-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+	transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+	display:block;
+	text-decoration:none;
+
+}
+
+.btn:hover{
+	background:#424551;
+	color:#fff;
+}
+
+.btn.howto{
+	float:left;
+	position:absolute;
+	left:12px;
+	top:12px;
+	-webkit-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+	-moz-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+	-o-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+	transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+}
+
+.btn.howto.close{
+	left:250px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	width:15px;
+	text-align:center;
+}
+
+.btn.github{
+	float:right;
+	position:absolute;
+	right:12px;
+	top:12px;
+}
+
+/********** Drawer **********/
+
+#drawer{
+	width:300px;
+	height:100%;
+	display:block;
+	position:fixed;
+	background:#222;
+	z-index: 999999;
+	display:none;
+}
+
+#drawer h3{
+	color:#eee;
+	font-size:13px;
+	padding:10px;
+
+}
+
+#drawer hr{
+	margin:0px;
+	border-top:1px solid #111;
+}
+
+#drawer h3.tip{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 11px;
+	color: #0098cb;
+}
+
+#drawer h3.note{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 11px;
+	color: #98cb00;
+}
+
+#drawer h3:first-child{
+	padding-top:80px;
+}
+
+#drawer pre{
+	max-width:300px;
+	color:#aaa;
+	overflow-x:scroll;
+	background:#111;
+	padding:10px;
 }

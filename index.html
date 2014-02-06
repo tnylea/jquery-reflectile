@@ -9,19 +9,61 @@
 	</head>
 <body>
 
-	<h1>jQuery Reflectile</h1>
+	<div id="drawer">
+		
+		<h3>1. Add the link the the JS file to your header</h3>
+		<pre>&lt;script src="jquery.reflectile.js"&gt;&lt;/script&gt;</pre>
+		<hr />
+		<h3>2. Add the following javascript to the element that has a background you wish to apply this effect to:</h3>
+		<pre>$(document).ready(function(){	
+	$('#element').reflectile({ width: '500px' });
+});</pre>
+		<h3 class="tip">Tip: Make sure to specify the width of the image</h3>
+		<hr />
+		<h3>3. Make sure that the background image element is positioned either 'relative' or 'absolute':</h3>
+		<pre>#element{
+	position:relative;
+}</pre>
 
-	<h4>(Positioned Left) Background Repeated without Reflected Tile</h4>
+	<hr />
+	<h3>4. That's it, your background tile should reflect every other image giving it a nicer flow.</h3>
+		
+	
+		<h3 class="note">Note: This plugin only supports images that are positioned 'left', 'center', or 'right'.</h3>
+
+	</div>
+
+	<div class="header">
+		<h1>jQuery Reflectile</h1>
+		<div class="btn howto">HOW TO</div>
+		<a class="btn github" href="https://github.com/tnylea/jquery-reflectile" target="_blank">GITHUB</a>
+	</div>
+
+	
+	<h2>A simple jQuery plugin to add reflected images to looping tiled backgrounds</h2>
+
+
+	<h4 class="red">(Positioned Left) Background Repeated without Reflected Tile</h4>
 	<div id="background1"></div>
 
-	<h4>(Positioned Left) Same Background Repeated with Reflected Tile</h4>
+	<h4 class="green">(Positioned Left) Same Background Repeated with Reflected Tile</h4>
 	<div id="background2"></div>
 
-	<h4>(Positioned Center) Background Repeated without Reflected Tile</h4>
+	<hr />
+
+	<h4 class="red">(Positioned Center) Background Repeated without Reflected Tile</h4>
 	<div id="background3"></div>
 
-	<h4>(Positioned Center) Same Background Repeated with Reflected Tile</h4>
+	<h4 class="green">(Positioned Center) Same Background Repeated with Reflected Tile</h4>
 	<div id="background4"></div>
+
+	<hr />
+
+	<h4 class="red">(Positioned Right) Background Repeated without Reflected Tile</h4>
+	<div id="background5"></div>
+
+	<h4 class="green">(Positioned Right) Same Background Repeated with Reflected Tile</h4>
+	<div id="background6"></div>
 
 <script type="text/javascript">
 
@@ -29,11 +71,25 @@
 		console.log('testing');
 		$('#background2').reflectile({ width: '300px' });
 		$('#background4').reflectile({ width: '800px' });
+		$('#background6').reflectile({ width: '300px' });
 	});
 
 	$(window).resize(function(){
 		$('#background2').reflectile({ width: '300px' });
 		$('#background4').reflectile({ width: '800px' });
+		$('#background6').reflectile({ width: '300px' });
+	});
+
+	$(document).ready(function(){
+		$('.howto').click(function(){
+			$(this).toggleClass('close');
+			$('#drawer').toggle();
+			if($(this).hasClass('close')){
+				$(this).text('X');
+			} else {
+				$(this).text('HOW TO');
+			}
+		});
 	});
 
 </script>
