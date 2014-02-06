@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Reflectile</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Qwigley' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="assets/js/jquery.reflectile.js"></script>
+	</head>
+<body>
+
+	<h1>jQuery Reflectile</h1>
+
+	<h4>(Positioned Left) Background Repeated without Reflected Tile</h4>
+	<div id="background1"></div>
+
+	<h4>(Positioned Left) Same Background Repeated with Reflected Tile</h4>
+	<div id="background2"></div>
+
+	<h4>(Positioned Center) Background Repeated without Reflected Tile</h4>
+	<div id="background3"></div>
+
+	<h4>(Positioned Center) Same Background Repeated with Reflected Tile</h4>
+	<div id="background4"></div>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		console.log('testing');
+		$('#background2').reflectile({ width: '300px' });
+		$('#background4').reflectile({ width: '800px' });
+	});
+
+	$(window).resize(function(){
+		$('#background2').reflectile({ width: '300px' });
+		$('#background4').reflectile({ width: '800px' });
+	});
+
+</script>
+</body>
+</html>
